@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "ES2020",
+        "target": "es5",
+        "allowJs": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
