@@ -1,0 +1,11 @@
+@import "../../../node_modules/css.gg/icons/css/close.css";
+@import "../../../node_modules/css.gg/icons/css/copyright.css";
+
+.gg-close {
+    --ggs: 4;
+}
+
+.gg-copyright {
+    display: inline-block;
+    --ggs: 1;
+}
