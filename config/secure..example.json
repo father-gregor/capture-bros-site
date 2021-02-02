@@ -3,5 +3,6 @@
     "protonmail": {
         "username": "",
         "password": ""
-    }
+    },
+    "testingEmail": ""
 }
