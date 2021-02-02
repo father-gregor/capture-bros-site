@@ -1,16 +1,38 @@
 <header class="container mx-auto mt-10">
     <div class="flex flex-row">
-        <div class="flex-grow-0 ml-10">
-            <a href="#">
-                <img src="/dist/public/img/logo-tight.png" width="250"/>
+        <div class="flex-grow-0 ml-5 sm:ml-10">
+            <a href="#" class="header-logo">
+                <img src="/dist/public/img/logo-tight.png" width="250" />
             </a>
         </div>
 
-        <ul class="flex flex-grow list-none justify-end items-center font-primary text-2xl lg:tracking-wide">
-            <li class="mr-5"><a href="#">Lorem ipsum</a></li>
-            <li class="mr-5"><a href="#">Lorem ipsum</a></li>
-            <li class="mr-5"><a href="#">Lorem ipsum</a></li>
-            <li class="mr-5"><a href="#">Lorem ipsum</a></li>
+        <ul class="hidden sm:flex flex-grow list-none justify-end items-center font-logo text-2xl lg:tracking-wide">
+            <li class="mr-5 hover:text-capture-red"><a href="#what-we-do">What we do</a></li>
+            <li class="mr-5 hover:text-capture-red"><a href="#projects">Projects</a></li>
+            <li class="mr-5 hover:text-capture-red"><a href="#clients">Clients</a></li>
+            <li class="mr-5 hover:text-capture-red"><a href="#contact">Contact Us</a></li>
         </ul>
+
+        <div class="flex flex-grow justify-end items-center mr-10 sm:hidden" onclick="toggleMobileNavbar()">
+            <div class="burger burger-slide">
+                <div class="burger-lines"></div>
+            </div>
+        </div>
     </div>
 </header>
+
+<div id="mobile-navbar" class="mobile-navbar fixed top-0 right-0 h-full w-full sm:hidden">
+    <div class="mobile-navbar-bg fixed top-0 right-0 h-full w-full flex items-center bg-black bg-opacity-50 z-10" onclick="toggleMobileNavbar()">
+        <div class="mobile-menu-close">
+            <i class="gg-close text-white"></i>
+        </div>
+    </div>
+    <div class="mobile-navbar-menu fixed top-0 right-0 h-full w-64 flex items-center bg-white shadow-2xl z-20">
+        <ul class="flex flex-col list-none font-logo text-2xl lg:tracking-wide ml-10">
+            <li class="mb-3 hover:text-capture-red"><a href="#what-we-do" onclick="toggleMobileNavbar()">What we do</a></li>
+            <li class="mb-3 hover:text-capture-red"><a href="#projects" onclick="toggleMobileNavbar()">Projects</a></li>
+            <li class="mb-3 hover:text-capture-red"><a href="#clients" onclick="toggleMobileNavbar()">Clients</a></li>
+            <li class="mb-3 hover:text-capture-red"><a href="#contact" onclick="toggleMobileNavbar()">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
