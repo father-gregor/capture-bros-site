@@ -1,5 +1,66 @@
 {
     "head": {
         "title": "CaptureBros Team - Game Footage Capture, Game Trailers Editing"
+    },
+    "general": {
+        "contactEmail": "capturebros@protonmail.com"
+    },
+    "buildSettings": {
+        "development": {
+            "contactFormApi": ""
+        },
+        "production": {
+            "contactFormApi": ""
+        }
+    },
+    "featuredVideos": {
+        "width": 450,
+        "videos": [
+            {
+                "url": "https://www.youtube.com/embed/JSaiKqBkcNk",
+                "title": "Override 2: Super Mech League - Launch Trailer",
+                "subtitle": "Official Playstation Channel"
+            },
+            {
+                "url": "https://www.youtube.com/embed/cIWzzAzmUxU",
+                "title": "Override 2: Super Mech League - Ultraman Gameplay Trailer",
+                "subtitle": "Official Playstation Channel"
+            },
+            {
+                "url": "https://www.youtube.com/embed/s1xs0UL70qI",
+                "title": "Override 2: Super Mech League - Career Mode Trailer",
+                "subtitle": "Official Playstation Channel"
+            },
+            {
+                "url": "https://www.youtube.com/embed/LVVpeC5BZwQ",
+                "title": "Override 2: Super Mech League - Open Beta Trailer",
+                "subtitle": "Official Playstation Channel"
+            }
+        ]
+    },
+    "featuredClients": {
+        "imgWidth": 250,
+        "clients": [
+            {
+                "name": "Maximum Games",
+                "url": "https://www.maximumgames.com/",
+                "imgUrl": "/dist/public/img/maximum-games.png"
+            },
+            {
+                "name": "Modus Games",
+                "url": "https://modusgames.com/",
+                "imgUrl": "/dist/public/img/modus.png"
+            },
+            {
+                "name": "Modus Studios Brazil",
+                "url": "https://modusgames.com/about/",
+                "imgUrl": "/dist/public/img/modus-brazil.jpg"
+            },
+            {
+                "name": "Stormind Games",
+                "url": "https://stormindgames.com/",
+                "imgUrl": "/dist/public/img/stormind-games.png"
+            }
+        ]
     }
 }
