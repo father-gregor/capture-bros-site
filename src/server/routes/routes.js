@@ -1,5 +1,7 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+
+const GeneralMiddleware = require('../middlewares/general.middleware');
 
 const ContactController = require('../controllers/contact.controller');
 
@@ -9,7 +11,16 @@ router.route('/')
     });
 
 router.route('/api/contact/test-email')
-    .get(ContactController.testEmailSend);
+    .get(
+        GeneralMiddleware.checkSecureAccess,
+        ContactController.testEmailSend
+    );
+
+router.route('/api/contact/missed')
+    .get(
+        GeneralMiddleware.checkSecureAccess,
+        ContactController.getMissedEmails
+    );
 
 router.route('/api/contact/submit-form')
     .post(
