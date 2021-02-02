@@ -120,4 +120,4 @@ dist
 # Custom ignores
 config/secure.json
 .idea
-missed_emails/**
+src/server/missed-emails/**
