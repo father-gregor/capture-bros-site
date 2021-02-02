@@ -1,2 +1,97 @@
 @import "./tailwind.css";
 @import "./fonts.scss";
+@import "./burger-icon.scss";
+@import "./icons.scss";
+
+body {
+    &.preload {
+        .mobile-navbar {
+            opacity: 0;
+        }
+    }
+
+    &.mobile-menu-opened {
+        overflow: hidden;
+    }
+}
+
+header,
+.mobile-navbar {
+    li {
+        transition: color 0.2s ease-in;
+    }
+}
+
+.mobile-navbar {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s linear 1s;
+
+    .mobile-navbar-bg {
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .mobile-menu-close {
+        margin-left: 20%;
+    }
+
+    .mobile-navbar-menu {
+        margin-right: -50px;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    &.is-visible {
+        visibility: visible;
+    }
+
+    &.opened {
+        opacity: 1;
+        z-index: 10;
+        transition: opacity 0s linear 0s;
+
+        .mobile-navbar-bg {
+            opacity: 1;
+            transition: opacity 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+
+        .mobile-navbar-menu {
+            transform: none;
+        }
+    }
+}
+
+.header-logo {
+    display: block;
+    width: 180px;
+
+    @media (min-width: 1024px) {
+        width: 250px;
+    }
+}
+
+.what-we-do-graph {
+    width: 350px;
+
+    @media (min-width: 768px) {
+        width: 450px;
+    }
+}
+
+.contact-form-width {
+    width: 250px;
+
+    @media (min-width: 640px) {
+        width: 400px;
+    }
+}
+
+.featured-video {
+    @media (max-width: 639px) {
+        iframe {
+            width: 300px;
+            height: 200px;
+        }
+    }
+}
