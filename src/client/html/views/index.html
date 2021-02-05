@@ -49,15 +49,6 @@ function dynamicArgs (args, obj) {
     <body class="bg-background preload">
         @require('../parts/header.html')
 
-        <div class="mx-auto mb-20">
-            <div class="flex flex-col justify-center uppercase font-heading text-6xl text-center"
-                 style="height: 500px;">
-                <div>Game Footage.</div>
-                <div>It's our job</div>
-                <div style="display: none;">Leave it to us</div>
-            </div>
-        </div>
-
         <div id="what-we-do"
              class="mx-auto py-20 bg-white">
             <div class="flex flex-col">
@@ -70,19 +61,19 @@ function dynamicArgs (args, obj) {
         </div>
 
         <div id="projects"
-             class="mx-auto pt-20">
+             class="mx-auto pt-20 bg-capture-blue">
             <div class="flex flex-col">
-                <div class="mb-8 uppercase font-heading text-4xl text-center">
-                    Featured work
+                <div class="mb-8 uppercase font-heading text-4xl text-white text-center">
+                    Latest works
                 </div>
                 <div class="flex justify-center">
-                    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                    <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
                         <% config.featuredVideos.videos.forEach((video) => { %>
                             <%= require('../parts/featured-video.html').apply(null, dynamicArgs(arguments, {video, config})) %>
                         <% }); %>
                     </div>
                 </div>
-                <div class="my-14 text-center font-text text-xl">
+                <div class="my-14 text-center font-text text-white text-xl">
                     Want our help? Let's <a class="text-capture-red hover:text-opacity-80 font-semibold"
                        href="mailto:<%= config.general.contactEmail %>">talk</a>
                     or leave us a message <a class="text-capture-red hover:text-opacity-80 font-semibold"
@@ -95,10 +86,10 @@ function dynamicArgs (args, obj) {
              class="mx-auto py-20 bg-white">
             <div class="flex flex-col">
                 <div class="mb-10 font-heading text-4xl uppercase text-center">
-                    Our Clients
+                    Our Partners
                 </div>
-                <div class="flex justify-center">
-                    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 2xl:grid-cols-4">
+                <div class="container mx-auto">
+                    <div class="flex flex-row flex-wrap justify-center xl:mx-20">
                         <% config.featuredClients.clients.forEach((client) => { %>
                             <%= require('../parts/featured-client.html').apply(null, dynamicArgs(arguments, {client, config})) %>
                         <% }); %>
