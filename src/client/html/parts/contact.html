@@ -21,7 +21,7 @@
                placeholder="">
     </label>
     <label class="block">
-        <span class="<%= defaultTitleStyle %>">E-mail</span>
+        <span class="<%= defaultTitleStyle %> required-field">E-mail</span>
         <input type="email"
                class="<%= defaultInputStyle %>"
                name="email"
@@ -38,7 +38,7 @@
         </select>
     </label>
     <label class="block">
-        <span class="<%= defaultTitleStyle %>">Message</span>
+        <span class="<%= defaultTitleStyle %> required-field">Message</span>
         <textarea class="<%= defaultInputStyle %>"
                   rows="3"
                   name="message"
@@ -46,9 +46,15 @@
                   required></textarea>
     </label>
 
+    <div id="success-block" class="mt-3 border-2 border-green-600 rounded-md text-xl overflow-hidden" style="display: none;">
+        <div class="flex flex-row justify-center content-center px-5 py-2 bg-green-500 text-white tracking-wider font-logo">
+            Successfully sent!
+        </div>
+    </div>
+
     <div id="error-block" class="mt-3 border border-red-600 rounded-md text-xl overflow-hidden" style="display: none;">
         <div class="flex flex-row ">
-            <div class="flex flex-wrap content-center px-5 py-6 bg-red-500 text-white tracking-wider font-logo">
+            <div class="flex flex-wrap content-center px-5 py-6 bg-red-500 text-white tracking-wider font-logo uppercase">
                 Error
             </div>
             <div class="flex flex-wrap content-center px-2 py-1 font-text">
@@ -58,6 +64,8 @@
     </div>
 
     <label class="block mt-3">
-        <button type="submit" class="<%= defaultTitleStyle %> w-full py-2 bg-capture-red hover:bg-opacity-80 text-white rounded-md">Submit</button>
+        <button id="submit-contact-form" type="submit" class="<%= defaultTitleStyle %> w-full py-2 bg-capture-red hover:bg-opacity-80 text-white rounded-md">
+            Submit
+        </button>
     </label>
 </form>
