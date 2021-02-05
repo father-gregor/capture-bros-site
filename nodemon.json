@@ -1,3 +1,4 @@
 {
-    "ignore": ["src/server/missed_emails/**", "src/client/**", "dist/**"]
+    "ignore": ["src/server/missed-emails/**", "src/client/**", "dist/**"],
+    "ext": "js,json,html"
 }
