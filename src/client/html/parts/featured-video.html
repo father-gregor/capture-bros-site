@@ -1,4 +1,4 @@
-<div class="flex flex-col bg-white featured-video">
+<div class="flex flex-col bg-white rounded-b-lg featured-video">
     <div>
         <iframe width="<%= config.featuredVideos.width %>"
                 height="<%= Math.round(config.featuredVideos.width * 9 / 16) %>"
@@ -8,7 +8,23 @@
                 allowfullscreen>
         </iframe>
     </div>
-    <div>
-
+    <div class="flex flex-col pt-6 pb-4 px-4 font-text">
+        <div class="text-sm uppercase text-gray-500 font-semibold">Footage Capture</div>
+        <div class="flex items-center text-xl my-2">
+            <i class="gg-eye mr-1" title="Views"></i> <%= video.views %>+
+        </div>
+        <hr>
+        <div class="my-2">
+            <div class="mt-3 mb-2 font-semibold uppercase text-sm text-gray-500">Channels</div>
+            <div class="flex flex-row">
+                <% video.channels.forEach((channel) => { %>
+                    <div class="flex items-center mr-2">
+                        <a href="<%= channel.url %>" target="_blank" title="<%= channel.name %>">
+                            <img title="<%= channel.name %>" class="rounded-full h-9 w-9 mr-1" src="/dist/public/img/<%= channel.logo %>" />
+                        </a>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
     </div>
 </div>
