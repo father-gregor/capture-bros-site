@@ -1,15 +1,31 @@
-<footer class="mx-auto bg-black text-white font-text text-lg">
-    <div class="pt-14 pb-7 md:pt-10 md:pb-5">
-        <div class="flex flex-col md:flex-row justify-evenly items-center">
-            <div class="p-2 md:p-4">
-                <a href="mailto:<%= config.general.contactEmail %>"><%= config.general.contactEmail %></a>
+<footer class="mx-auto bg-capture-blue text-white font-text text-lg">
+    <div class="pt-10 pb-7 md:pb-5">
+        <div class="flex flex-col md:flex-row lg:px-10 xl:px-20 justify-evenly items-center">
+            <div class="flex flex-col p-2 md:p-4">
+                <div class="flex justify-center md:justify-start order-last md:order-none items-center mb-1">
+                    <i class="gg-mail mr-2" title="Email"></i>
+                    <div class="block"><a href="mailto:<%= config.general.contactEmail %>" class="align-text-bottom"><%= config.general.contactEmail %></a></div>
+                </div>
+                <div class="flex justify-center md:justify-start items-center mb-1">
+                    <i class="gg-pin mr-2"></i>
+                    Kyiv, Ukraine
+                </div>
+                <div class="flex justify-center md:justify-start items-center mb-1">
+                    <i class="gg-pin mr-2"></i>
+                    Santa Monica, California
+                </div>
+            </div>
+            <div class="order-first md:order-none p-2 md:p-4">
+                <img src="/dist/public/img/logo-no-text.png" width="60" title="CaptureBros Team"/>
             </div>
             <div class="flex items-center p-2 md:p-4">
                 <i class="gg-copyright"></i> <div class="ml-2">2021 <span class="font-capture-bros  text-capture-red">CaptureBros Team</span></div>
             </div>
         </div>
-        <div class="flex justify-center md:justify-end pt-10 md:pt-5 md:px-20 text-sm text-gray-500">
-            <div>Icons made by <a href="https://www.freepik.com" class="hover:text-white" title="Freepik">Freepik</a>, <a href="https://smashicons.com/" class="hover:text-white" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" class="hover:text-white" title="Flaticon">www.flaticon.com</a></div>
+        <div class="flex justify-center md:justify-end pt-10 md:pt-5 px-5 md:px-20 text-sm text-gray-500">
+            <div class="text-center">
+                Icons made by <a href="https://www.freepik.com" class="hover:text-white" title="Freepik">Freepik</a>, <a href="https://smashicons.com/" class="hover:text-white" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" class="hover:text-white" title="Flaticon">www.flaticon.com</a>
+            </div>
         </div>
     </div>
 </footer>
