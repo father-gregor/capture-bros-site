@@ -4,5 +4,8 @@
         "username": "",
         "password": ""
     },
-    "testingEmail": ""
+    "emailList": {
+        "development": [],
+        "production": []
+    }
 }
