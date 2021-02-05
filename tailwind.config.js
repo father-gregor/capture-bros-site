@@ -13,7 +13,8 @@ module.exports = {
             },
             colors: {
                 capture: {
-                    red: '#d20d12'
+                    red: '#d20d12',
+                    blue: '#081527'
                 }
             }
         },
