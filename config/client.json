@@ -14,52 +14,114 @@
         }
     },
     "featuredVideos": {
-        "width": 450,
+        "width": 500,
         "videos": [
             {
                 "url": "https://www.youtube.com/embed/JSaiKqBkcNk",
                 "title": "Override 2: Super Mech League - Launch Trailer",
-                "subtitle": "Official Playstation Channel"
+                "type": "footage",
+                "views": "150 000",
+                "channels": [
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=JSaiKqBkcNk",
+                        "logo": "playstation-logo.jpg"
+                    },
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=M3smqT6fwVc",
+                        "logo": "xbox-logo.jpg"
+                    },
+                    {
+                        "name": "Nintendo",
+                        "url": "https://www.youtube.com/watch?v=Cj2Idhset3Q",
+                        "logo": "nintendo-logo.jpg"
+                    }
+                ]
             },
             {
                 "url": "https://www.youtube.com/embed/cIWzzAzmUxU",
                 "title": "Override 2: Super Mech League - Ultraman Gameplay Trailer",
-                "subtitle": "Official Playstation Channel"
+                "type": "footage",
+                "views": "325 000",
+                "channels": [
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=cIWzzAzmUxU",
+                        "logo": "playstation-logo.jpg"
+                    },
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=OVjDVbIFwb8",
+                        "logo": "xbox-logo.jpg"
+                    },
+                    {
+                        "name": "IGN",
+                        "url": "https://www.youtube.com/watch?v=n9USbXuLBwY",
+                        "logo": "ign-logo.jpg"
+                    }
+                ]
             },
             {
                 "url": "https://www.youtube.com/embed/s1xs0UL70qI",
                 "title": "Override 2: Super Mech League - Career Mode Trailer",
-                "subtitle": "Official Playstation Channel"
+                "type": "footage",
+                "views": "30 000",
+                "channels": [
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=s1xs0UL70qI",
+                        "logo": "playstation-logo.jpg"
+                    },
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=TcQiTxIozd0",
+                        "logo": "xbox-logo.jpg"
+                    }
+                ]
             },
             {
                 "url": "https://www.youtube.com/embed/LVVpeC5BZwQ",
                 "title": "Override 2: Super Mech League - Open Beta Trailer",
-                "subtitle": "Official Playstation Channel"
+                "type": "footage",
+                "views": "50 000",
+                "channels": [
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=LVVpeC5BZwQ",
+                        "logo": "playstation-logo.jpg"
+                    }
+                ]
             }
         ]
     },
     "featuredClients": {
-        "imgWidth": 250,
+        "imgWidth": 350,
         "clients": [
+            {
+                "name": "Overdreamers Studios",
+                "url": "http://overdreamers.com/",
+                "imgUrl": "overdreamers-logo.png"
+            },
             {
                 "name": "Maximum Games",
                 "url": "https://www.maximumgames.com/",
-                "imgUrl": "/dist/public/img/maximum-games.png"
+                "imgUrl": "maximum-games.png"
             },
             {
                 "name": "Modus Games",
                 "url": "https://modusgames.com/",
-                "imgUrl": "/dist/public/img/modus.png"
+                "imgUrl": "modus.png"
             },
             {
                 "name": "Modus Studios Brazil",
                 "url": "https://modusgames.com/about/",
-                "imgUrl": "/dist/public/img/modus-brazil.jpg"
+                "imgUrl": "modus-brazil.jpg"
             },
             {
                 "name": "Stormind Games",
                 "url": "https://stormindgames.com/",
-                "imgUrl": "/dist/public/img/stormind-games.png"
+                "imgUrl": "stormind-games.png"
             }
         ]
     }
