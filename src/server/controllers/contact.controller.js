@@ -1,4 +1,6 @@
 const fs = require('fs');
+const path = require('path');
+const _ = require('lodash');
 const ProtonMail = require('protonmail-api');
 const {body, validationResult} = require('express-validator');
 
@@ -10,18 +12,27 @@ const protonCredentials = {
     password: secureConfig.protonmail.password
 };
 
+const contactFormEmailTemplate = fs.readFileSync(path.join(__dirname, '../views/contact-email.html'), {encoding: 'utf-8'});
+
 async function testEmailSend (req, res) {
     try {
+        const {data, html} = getEmailContactFormData({
+            company: 'Test Company',
+            fullname: 'Test Client',
+            email: 'test@example.com',
+            category: 'Test Category',
+            message: 'Test\nMulti\nLines'
+        });
         const proton = await ProtonMail.connect(protonCredentials);
 
         const emailRes = await proton.sendEmail({
-            to: secureConfig.testingEmail,
-            subject: `Testing protonmail API - sended on ${new Date().toISOString()}`,
-            body: 'Test data'
+            to: secureConfig.emailList.development[0],
+            subject: `Testing protonmail API - sended on ${data.submitted}`,
+            body: html
         });
 
         proton.close();
-        return res.status(200).send(`Successfully sended on ${emailRes.time.toISOString()}`);
+        return res.status(200).send(`Successfully sended on ${emailRes.time.toLocaleString('en-US')}`);
     }
     catch (err) {
         console.error(err);
@@ -32,16 +43,17 @@ async function testEmailSend (req, res) {
 function validateContactForm () {
     return [
         body('email', 'No email specified!').exists(),
-        body('email', 'Invalid email!').isEmail(),
-        body('message', 'No message specified!').exists()
+        body('email', 'Invalid email!').isEmail().normalizeEmail(),
+        body('message', 'No message specified!').exists().trim().escape()
     ];
 }
 
 async function getMissedEmails (req, res) {
-    const dir = `${__dirname}/../missed-emails/`;
+    const dir = path.join(__dirname, '/../missed-emails/');
     const missedEmailFiles = fs.readdirSync(dir);
     const missedEmails = [];
     const errors = [];
+
     for (let filename of missedEmailFiles) {
         try {
             if (!filename.startsWith('missed-email')) {
@@ -68,17 +80,26 @@ async function sendContactForm (req, res) {
     }
 
     try {
-        /*
-        const proton = await ProtonMail.connect(protonCredentials);
-    
-        await proton.sendEmail({
-            to: secureConfig.testingEmail,
-            subject: 'TEst protonmail API',
-            body: 'Test data'
-        });
-    
-        proton.close();*/
-        console.log(req.body);
+        const {data, html} = getEmailContactFormData(req.body);
+
+        if (process.env.NODE_ENV === 'production') {
+            const proton = await ProtonMail.connect(protonCredentials);
+
+            for (let emailTo of secureConfig.emailList.production) {
+                await proton.sendEmail({
+                    to: emailTo,
+                    subject: `New contact form submission - ${data.category} - ${data.company || data.fullname || data.email}`,
+                    body: html
+                });
+            }
+
+            proton.close();
+        }
+        else {
+            console.log('HTML:', html);
+            console.log('BODY:', data);
+        }
+
         return res.status(200).json({status: 'success'});
     }
     catch (err) {
@@ -88,12 +109,21 @@ async function sendContactForm (req, res) {
                 return;
             }
 
-            console.log(err);
+            console.error(err);
             console.log('\nFailed to save missed email, fallback to logging directly to console:');
             console.dir(req.body, {depth: 5});
         });
         return res.status(400).json({status: 'error', reason: `Internal error. Please try again later or contact directly via ${clientConfig.general.contactEmail}`});
     }
+}
+
+function getEmailContactFormData (input) {
+    const data = {
+        ...input,
+        submitted: new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})
+    };
+    const html = _.template(contactFormEmailTemplate)({data});
+    return {data, html};
 }
 
 module.exports = {
