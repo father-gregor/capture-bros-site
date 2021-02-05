@@ -22,6 +22,14 @@ header,
     }
 }
 
+header {
+    background: url('../img/header-background.jpg') center 45% / auto no-repeat;
+
+    @media (min-width: 1536px) {
+        background-size: cover;
+    }
+}
+
 .mobile-navbar {
     opacity: 0;
     visibility: hidden;
@@ -91,7 +99,20 @@ header,
     @media (max-width: 639px) {
         iframe {
             width: 300px;
-            height: 200px;
+            height: 181px;
         }
     }
+}
+
+.required-field {
+    &:after {
+        content:" *";
+        color: black;
+    }
+}
+
+
+#submit-contact-form:disabled {
+    opacity: 0.5;
+    background-color: grey;
 }
