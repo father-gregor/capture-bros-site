@@ -1,7 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    purge: [],
+    purge: [
+        './src/client/html/**/*.html',
+        './src/client/ts/*.ts',
+        './src/client/scss/**/*.scss'
+    ],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
@@ -29,4 +33,4 @@ module.exports = {
     plugins: [
         require('@tailwindcss/forms')
     ],
-}
+};
