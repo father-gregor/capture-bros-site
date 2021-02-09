@@ -37,8 +37,6 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
-dist/
-
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -84,7 +82,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -122,3 +119,5 @@ dist
 config/secure.json
 .idea
 src/server/missed-emails/**.json
+dist/
+distDev/
