@@ -1,10 +1,13 @@
 const _ = require('lodash');
+const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const clientConfig = require('./config/client.json');
 
@@ -19,9 +22,10 @@ module.exports = (env, options) => {
             './src/client/scss/style.scss'
         ],
         output: {
-            filename: './js/bundle.js'
+            filename: './js/bundle.js',
+            path: path.resolve(__dirname, process.env.NODE_ENV === 'production' ? 'dist' : 'distDev')
         },
-        devtool: 'source-map',
+        devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
         module: {
             rules: [
                 {
@@ -116,6 +120,15 @@ module.exports = (env, options) => {
                 ]
             }),
             new CleanWebpackPlugin({})
-        ]
+        ],
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    parallel: true,
+                }),
+                new CssMinimizerPlugin(),
+            ],
+        },
     };
 };
