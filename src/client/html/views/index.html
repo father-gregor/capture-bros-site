@@ -83,12 +83,12 @@ function dynamicArgs (args, obj) {
         </div>
 
         <div id="clients"
-             class="mx-auto py-20 bg-white">
+             class="mx-auto pt-20 bg-white">
             <div class="flex flex-col">
-                <div class="mb-10 font-heading text-4xl uppercase text-center">
-                    Our Partners
+                <div class="mb-4 font-heading text-4xl uppercase text-center">
+                    Our Clients
                 </div>
-                <div class="container mx-auto">
+                <div class="container mx-auto xl:px-40">
                     <div class="flex flex-row flex-wrap justify-center xl:mx-20">
                         <% config.featuredClients.clients.forEach((client) => { %>
                             <%= require('../parts/featured-client.html').apply(null, dynamicArgs(arguments, {client, config})) %>
@@ -97,6 +97,18 @@ function dynamicArgs (args, obj) {
                 </div>
             </div>
         </div>
+
+        <div id="teams" class="mx-auto py-20 bg-white">
+            <div class="flex flex-col">
+                <div class="mb-10 font-heading text-4xl uppercase text-center">
+                    Part of something bigger
+                </div>
+
+                @require('../parts/parent-company.html')
+            </div>
+        </div>
+
+        <div class="mx-auto w-3/4 md:w-2/5 border-t-4 border-capture-blue"></div>
 
         <div id="contact"
              class="mx-auto py-20 bg-white">
