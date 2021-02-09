@@ -99,11 +99,6 @@
         "imgWidth": 350,
         "clients": [
             {
-                "name": "Overdreamers Studios",
-                "url": "http://overdreamers.com/",
-                "imgUrl": "overdreamers-logo.png"
-            },
-            {
                 "name": "Maximum Games",
                 "url": "https://www.maximumgames.com/",
                 "imgUrl": "maximum-games.png"
