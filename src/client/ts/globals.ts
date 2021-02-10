@@ -60,6 +60,7 @@ declare module Config {
     }
 
     export interface RootObject {
+        hostUrl: string;
         head: Head;
         general: General;
         buildSettings: BuildSettings;
