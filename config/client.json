@@ -14,10 +14,10 @@
     },
     "buildSettings": {
         "development": {
-            "contactFormApi": "http://localhost:3000/api/contact/submit-form"
+            "contactFormEndpoint": "http://localhost:3000"
         },
         "production": {
-            "contactFormApi": ""
+            "contactFormEndpoint": "https://capture-bros-backend.herokuapp.com"
         }
     },
     "featuredVideos": {

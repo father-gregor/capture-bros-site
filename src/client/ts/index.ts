@@ -19,11 +19,11 @@ form.addEventListener('submit', (event) => {
 });
 
 async function sendContactData (contactData: FormData) {
-    const contactFormApi = ENV === 'development'
-        ? config.buildSettings.development.contactFormApi
-        : config.buildSettings.production.contactFormApi;
+    const contactFormEndpoint = ENV === 'development'
+        ? config.buildSettings.development.contactFormEndpoint
+        : config.buildSettings.production.contactFormEndpoint;
 
-    const response = await fetch(contactFormApi, {
+    const response = await fetch(`${contactFormEndpoint}/api/contact/submit-form`, {
         method: 'post',
         body: contactData
     });

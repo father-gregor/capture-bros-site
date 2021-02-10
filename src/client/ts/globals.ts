@@ -20,17 +20,13 @@ declare module Config {
         contactEmail: string;
     }
 
-    export interface Development {
-        contactFormApi: string;
-    }
-
-    export interface Production {
-        contactFormApi: string;
+    export interface BuildSettingPerEnv {
+        contactFormEndpoint: string;
     }
 
     export interface BuildSettings {
-        development: Development;
-        production: Production;
+        development: BuildSettingPerEnv;
+        production: BuildSettingPerEnv;
     }
 
     export interface Channel {
