@@ -14,7 +14,7 @@
     },
     "buildSettings": {
         "development": {
-            "contactFormApi": ""
+            "contactFormApi": "http://localhost:3000/api/contact/submit-form"
         },
         "production": {
             "contactFormApi": ""
