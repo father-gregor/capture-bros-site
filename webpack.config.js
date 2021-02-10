@@ -22,7 +22,7 @@ module.exports = (env, options) => {
             './src/client/scss/style.scss'
         ],
         output: {
-            filename: './js/bundle.min.js',
+            filename: './js/bundle.[contenthash].min.js',
             path: path.resolve(__dirname, process.env.NODE_ENV === 'production' ? 'dist' : 'distDev')
         },
         devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
@@ -115,14 +115,13 @@ module.exports = (env, options) => {
                 }
             }),
             new MiniCssExtractPlugin({
-                filename: '[name].css',
+                filename: '[name].[contenthash].css',
                 chunkFilename: '[id].css'
             }),
             new CopyWebpackPlugin({
                 patterns: [
                     {from: './src/client/favicon', to: './public/favicon'},
-                    {from: './src/client/img', to: './public/img'},
-                    {from: './src/client/fonts', to: './public/fonts'}
+                    {from: './src/client/img', to: './public/img'}
                 ]
             }),
             new CleanWebpackPlugin({})
