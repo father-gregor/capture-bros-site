@@ -116,7 +116,7 @@ out
 
 # Custom ignores
 .vscode
-config/secure.json
 .idea
 src/server/missed-emails/**.json
 distDev/
+.env
