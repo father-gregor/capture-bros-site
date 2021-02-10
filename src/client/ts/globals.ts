@@ -1,1 +1,75 @@
-declare const ENV: string;
+declare const ENV: 'development' | 'production';
+declare const config: Config.RootObject;
+
+declare module Config {
+
+    export interface Social {
+        ogUrl: string;
+        ogTitle: string;
+        ogDescription: string;
+        ogImage: string;
+    }
+
+    export interface Head {
+        title: string;
+        description: string;
+        social: Social;
+    }
+
+    export interface General {
+        contactEmail: string;
+    }
+
+    export interface Development {
+        contactFormApi: string;
+    }
+
+    export interface Production {
+        contactFormApi: string;
+    }
+
+    export interface BuildSettings {
+        development: Development;
+        production: Production;
+    }
+
+    export interface Channel {
+        name: string;
+        url: string;
+        logo: string;
+    }
+
+    export interface Video {
+        url: string;
+        title: string;
+        type: string;
+        views: string;
+        channels: Channel[];
+    }
+
+    export interface FeaturedVideos {
+        width: number;
+        videos: Video[];
+    }
+
+    export interface Client {
+        name: string;
+        url: string;
+        imgUrl: string;
+    }
+
+    export interface FeaturedClients {
+        imgWidth: number;
+        clients: Client[];
+    }
+
+    export interface RootObject {
+        head: Head;
+        general: General;
+        buildSettings: BuildSettings;
+        featuredVideos: FeaturedVideos;
+        featuredClients: FeaturedClients;
+    }
+
+}
+
