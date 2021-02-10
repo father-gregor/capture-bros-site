@@ -4,14 +4,13 @@ const _ = require('lodash');
 const ProtonMail = require('protonmail-api');
 const {body, validationResult} = require('express-validator');
 
-const secureConfig = require('../../../config/secure.json');
 const clientConfig = require('../../../config/client.json');
 
 const protonCredentials = {
-    username: secureConfig.protonmail.username,
-    password: secureConfig.protonmail.password
+    username: process.env.PROTON_EMAIL,
+    password: process.env.PROTON_PASSWORD
 };
-
+const emailList = process.env.EMAIL_LIST.split(',');
 const contactFormEmailTemplate = fs.readFileSync(path.join(__dirname, '../views/contact-email.html'), {encoding: 'utf-8'});
 
 async function testEmailSend (req, res) {
@@ -26,7 +25,7 @@ async function testEmailSend (req, res) {
         const proton = await ProtonMail.connect(protonCredentials);
 
         const emailRes = await proton.sendEmail({
-            to: secureConfig.emailList.development[0],
+            to: emailList[0],
             subject: `Testing protonmail API - sended on ${data.submitted}`,
             body: html
         });
@@ -85,7 +84,7 @@ async function sendContactForm (req, res) {
         if (process.env.NODE_ENV === 'production') {
             const proton = await ProtonMail.connect(protonCredentials);
 
-            for (let emailTo of secureConfig.emailList.production) {
+            for (let emailTo of emailList) {
                 await proton.sendEmail({
                     to: emailTo,
                     subject: `New contact form submission - ${data.category} - ${data.company || data.fullname || data.email}`,
