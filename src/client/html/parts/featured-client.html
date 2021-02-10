@@ -1,5 +1,5 @@
 <div class="flex justify-center ml-4 mr-4 mb-8">
     <a href="<%= client.url %>" target="_blank" rel="noopener" title="<%= client.name %>">
-        <img src="/dist/public/img/<%= client.imgUrl %>" alt="<%= client.name %> Logo" width="<%= config.featuredClients.imgWidth %>"/>
+        <img src="/dist/public/img/<%= client.imgUrl %>" loading="lazy" alt="<%= client.name %> Logo" width="<%= config.featuredClients.imgWidth %>" height="<%= Math.ceil(config.featuredClients.imgWidth * 720 / 1280) %>"/>
     </a>
 </div>

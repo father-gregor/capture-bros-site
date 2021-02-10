@@ -3,9 +3,10 @@
         <iframe width="<%= config.featuredVideos.width %>"
                 height="<%= Math.round(config.featuredVideos.width * 9 / 16) %>"
                 src="<%= video.url %>"
-                frameborder="0"
                 title="<%= video.title %>"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
+                style="border-style: none;"
                 allowfullscreen>
         </iframe>
     </div>
@@ -21,7 +22,7 @@
                 <% video.channels.forEach((channel) => { %>
                     <div class="flex items-center mr-2">
                         <a href="<%= channel.url %>" target="_blank" rel="noopener" title="<%= channel.name %>">
-                            <img title="<%= channel.name %>" class="rounded-full h-9 w-9 mr-1" alt="<%= channel.name %> Youtube Channel Logo" src="/dist/public/img/<%= channel.logo %>" />
+                            <img title="<%= channel.name %>" class="rounded-full mr-1" alt="<%= channel.name %> Youtube Channel Logo" src="/dist/public/img/<%= channel.logo %>" width="36" height="36" />
                         </a>
                     </div>
                 <% }); %>

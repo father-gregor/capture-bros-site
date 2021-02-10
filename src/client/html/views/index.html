@@ -2,40 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible"
-          content="ie=edge" />
-    <link rel="apple-touch-icon"
-          sizes="180x180"
-          href="/dist/public/favicon/apple-touch-icon.png">
-    <link rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/dist/public/favicon/favicon-32x32.png">
-    <link rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/dist/public/favicon/favicon-16x16.png">
-    <link rel="manifest"
-          href="/dist/public/favicon/site.webmanifest">
-    <link rel="mask-icon"
-          href="/dist/public/favicon/safari-pinned-tab.svg"
-          color="#5bbad5">
-    <meta name="msapplication-TileColor"
-          content="#da532c">
-    <meta name="theme-color"
-          content="#ffffff">
-    <title>
-        <%= config.head.title %>
-    </title>
-    <meta name="description"
-          content="" />
-    <meta name="keywords"
-          content="" />
-    <meta name="author"
-          content="" />
+    @require('../parts/head.html')
 </head>
 
 <%
@@ -74,9 +41,9 @@ function dynamicArgs (args, obj) {
                     </div>
                 </div>
                 <div class="my-14 text-center font-text text-white text-xl">
-                    Want our help? Let's <a class="text-capture-red hover:text-opacity-80 font-semibold"
+                    Want our help? Let's <a class="text-capture-red-light hover:text-opacity-80 font-semibold"
                        href="mailto:<%= config.general.contactEmail %>">talk</a>
-                    or leave us a message <a class="text-capture-red hover:text-opacity-80 font-semibold"
+                    or leave us a message <a class="text-capture-red-light hover:text-opacity-80 font-semibold"
                        href="#contact">below</a>.
                 </div>
             </div>
