@@ -18,6 +18,7 @@ module.exports = {
             colors: {
                 capture: {
                     red: '#d20d12',
+                    'red-light': '#fc1016',
                     blue: '#081527'
                 }
             }

@@ -22,7 +22,7 @@ module.exports = (env, options) => {
             './src/client/scss/style.scss'
         ],
         output: {
-            filename: './js/bundle.js',
+            filename: './js/bundle.min.js',
             path: path.resolve(__dirname, process.env.NODE_ENV === 'production' ? 'dist' : 'distDev')
         },
         devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
@@ -58,7 +58,8 @@ module.exports = (env, options) => {
                                 postcssOptions: {
                                     plugins: [
                                         require('postcss-import'),
-                                        require('tailwindcss')
+                                        require('tailwindcss'),
+                                        require('autoprefixer')
                                     ]
                                 }
                             }
@@ -106,7 +107,12 @@ module.exports = (env, options) => {
                 templateParameters: {
                     config: clientConfig
                 },
-                cache: false
+                cache: false,
+                inject: 'body',
+                scriptLoading: 'defer',
+                minify: {
+                    collapseWhitespace: false
+                }
             }),
             new MiniCssExtractPlugin({
                 filename: '[name].css',
