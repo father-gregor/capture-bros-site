@@ -119,5 +119,4 @@ out
 config/secure.json
 .idea
 src/server/missed-emails/**.json
-dist/
 distDev/
