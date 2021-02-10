@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Site for Capture Bros",
   "scripts": {
-    "devClient": "cross-env NODE_ENV=development webpack --mode development",
     "buildClient": "cross-env NODE_ENV=production webpack --mode production",
     "watchClient": "cross-env NODE_ENV=development webpack --mode development --watch",
     "watchServer": "nodemon ./src/server/server.js"
