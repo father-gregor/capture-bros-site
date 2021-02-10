@@ -24,10 +24,10 @@ header,
 }
 
 header {
-    background: url('../img/header-background.jpg') center 45% / auto no-repeat;
+    background: url('../img/header-background.jpg') center 55% / cover no-repeat;
 
     @media (min-width: 1536px) {
-        background-size: cover;
+        background-position: center 45%;
     }
 }
 
