@@ -1,6 +1,13 @@
 {
     "head": {
-        "title": "CaptureBros Team - Game Footage Capture, Game Trailers Editing"
+        "title": "CaptureBros Team - Game Footage Capture, Game Trailers Editing Services",
+        "description": "CaptureBros Team provides game footage capture and game traielrs editing services. Whatever the game ‒ we can do it",
+        "social": {
+            "ogUrl": "https://capturebros.com/",
+            "ogTitle": "CaptureBros Team - Game Footage Capture Services",
+            "ogDescription": "CaptureBros Team provides game footage capture and game traielrs editing services. Whatever the game ‒ we can do it",
+            "ogImage": "/dist/public/img/social-card.png"
+        }
     },
     "general": {
         "contactEmail": "capturebros@protonmail.com"
