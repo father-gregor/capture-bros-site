@@ -6,7 +6,7 @@
             "ogUrl": "https://capturebros.com/",
             "ogTitle": "CaptureBros Team - Game Footage Capture Services",
             "ogDescription": "CaptureBros Team provides game footage capture and game traielrs editing services. Whatever the game ‒ we can do it",
-            "ogImage": "/dist/public/img/social-card.png"
+            "ogImage": "/public/img/social-card.png"
         }
     },
     "general": {
