@@ -10,6 +10,7 @@ const routes = require('./routes/routes');
 
 const app = express();
 
+console.log('process.env.ALLOWED_ORIGINS.split', process.env.ALLOWED_ORIGINS.split(','));
 app.use(logger('dev'));
 app.use(cors({
     origin: process.env.ALLOWED_ORIGINS.split(','),
