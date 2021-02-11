@@ -10,10 +10,9 @@ const routes = require('./routes/routes');
 
 const app = express();
 
-console.log('process.env.ALLOWED_ORIGINS.split', process.env.ALLOWED_ORIGINS.split(','));
 app.use(logger('dev'));
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGINS.split(','),
+    origin: process.env.NODE_ENV === 'production' ? process.env.ALLOWED_ORIGINS.split(',') : true,
     optionsSuccessStatus: 200
 }));
 app.use(bodyParser.json());
