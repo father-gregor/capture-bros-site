@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const ProtonMail = require('protonmail-api');
+const ProtonMailX = require('../classes/proton-mail-x.class');
 const {body, validationResult} = require('express-validator');
 
 const clientConfig = require('../../../config/client.json');
@@ -15,6 +15,7 @@ const contactFormEmailTemplate = fs.readFileSync(path.join(__dirname, '../views/
 
 async function testEmailSend (req, res) {
     try {
+        const proton = await ProtonMailX.connect(protonCredentials);
         const {data, html} = getEmailContactFormData({
             company: 'Test Company',
             fullname: 'Test Client',
@@ -22,7 +23,6 @@ async function testEmailSend (req, res) {
             category: 'Test Category',
             message: 'Test\nMulti\nLines'
         });
-        const proton = await ProtonMail.connect(protonCredentials);
 
         const emailRes = await proton.sendEmail({
             to: emailList[0],
@@ -82,7 +82,7 @@ async function sendContactForm (req, res) {
         const {data, html} = getEmailContactFormData(req.body);
 
         if (process.env.NODE_ENV === 'production') {
-            const proton = await ProtonMail.connect(protonCredentials);
+            const proton = await ProtonMailX.connect(protonCredentials);
 
             for (let emailTo of emailList) {
                 await proton.sendEmail({
