@@ -15,6 +15,7 @@ module.exports = class ProtonMailX extends OriginalProtonMail {
                     '--disable-setuid-sandbox'
                 ]
             });
+            console.log('CONNECTED VIA PROTON MAIL X');
             this._page = await this._browser.newPage();
         }
         await super._connect();
