@@ -2,8 +2,10 @@ const OriginalProtonMail = require('protonmail-api');
 const puppeteer = require('puppeteer');
 
 module.exports = class ProtonMailX extends OriginalProtonMail {
-    constructor(config) {
-        super(config);
+    static async connect (config) {
+        const protonMail = new ProtonMailX(config);
+        await protonMail._connect();
+        return protonMail;
     }
 
     async _connect () {
