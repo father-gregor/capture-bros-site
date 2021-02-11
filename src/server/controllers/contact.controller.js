@@ -95,7 +95,6 @@ async function sendContactForm (req, res) {
             proton.close();
         }
         else {
-            console.log('HTML:', html);
             console.log('BODY:', data);
         }
 
