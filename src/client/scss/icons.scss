@@ -3,24 +3,28 @@
 @import "../../../node_modules/css.gg/icons/scss/eye.scss";
 @import "../../../node_modules/css.gg/icons/scss/mail.scss";
 @import "../../../node_modules/css.gg/icons/scss/pin.scss";
+@import "../../../node_modules/css.gg/icons/scss/comment.scss";
+@import "../../../node_modules/css.gg/icons/scss/close.scss";
+@import "../../../node_modules/css.gg/icons/scss/spinner.scss";
+@import "../../../node_modules/css.gg/icons/scss/check-o.scss";
+@import "../../../node_modules/css.gg/icons/scss/close-o.scss";
 
-.gg-close {
-    --ggs: 4;
-}
-
-.gg-copyright {
-    display: inline-block;
-    --ggs: 1;
-}
-
+.gg-copyright,
+.gg-mail,
+.gg-pin,
+.gg-comment,
+.gg-spinner,
+.gg-close,
+.gg-check-o,
+.gg-close-o,
 .gg-eye {
     display: inline-block;
 }
 
-.gg-mail {
-    display: inline-block;
+#mobile-navbar .gg-close {
+    --ggs: 4;
 }
 
-.gg-pin {
-    display: inline-block;
+.gg-copyright {
+    --ggs: 1;
 }
