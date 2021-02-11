@@ -3,7 +3,7 @@ window.onload = () => {
 };
 
 const form: HTMLFormElement = document.getElementById('contact-form') as HTMLFormElement; 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
     disableSubmitButton();
     hideContactFormError();
@@ -14,7 +14,7 @@ form.addEventListener('submit', (event) => {
         contactData.forEach((value, key) => console.log(`${key}:`, value));
     }
 
-    sendContactData(contactData);
+    await sendContactData(contactData);
     enableSubmitButton();
 });
 
@@ -28,7 +28,6 @@ async function sendContactData (contactData: FormData) {
         body: contactData
     });
     const data = await response.json();
-    console.log(data);
     if (data.status === 'error') {
         showContactFormError(data.reason);
     }
@@ -39,10 +38,12 @@ async function sendContactData (contactData: FormData) {
 
 function enableSubmitButton () {
     document.getElementById('submit-contact-form').removeAttribute('disabled');
+    changeSubmitButtonIcon(false);
 };
 
 function disableSubmitButton () {
     document.getElementById('submit-contact-form').setAttribute('disabled', '');
+    changeSubmitButtonIcon(true);
 }
 
 function showContactFormError (message: string) {
@@ -60,6 +61,11 @@ function showContactFormSuccess () {
 
 function hideContactFormSuccess () {
     document.getElementById('success-block').style.display = 'none';
+}
+
+function changeSubmitButtonIcon (inProgress: boolean) {
+    document.getElementById('submit-button-icon-before').style.display = inProgress ? 'none' : 'inline-block';
+    document.getElementById('submit-button-icon-inprogress').style.display = inProgress ? 'inline-block' : 'none';
 }
 
 let isMobileNavbarVisible = false;
