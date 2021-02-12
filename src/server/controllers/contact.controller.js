@@ -39,7 +39,7 @@ async function testEmailSend (req, res) {
     }
 }
 
-function validateContactForm () {
+function getContactFormValidators () {
     return [
         body('email', 'No email specified!').exists(),
         body('email', 'Invalid email!').isEmail().normalizeEmail(),
@@ -127,6 +127,6 @@ function getEmailContactFormData (input) {
 module.exports = {
     testEmailSend,
     getMissedEmails,
-    validateContactForm,
+    getContactFormValidators,
     sendContactForm
 };
