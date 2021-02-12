@@ -3,12 +3,18 @@ const router = express.Router();
 
 const GeneralMiddleware = require('../middlewares/general.middleware');
 
+const SystemController = require('../controllers/system.controller');
 const ContactController = require('../controllers/contact.controller');
 
 router.route('/')
     .get((req, res) => {
         return res.status(200).send();
     });
+
+router.route('/api/systen/ping')
+    .get(
+        SystemController.pingServer
+    );
 
 router.route('/api/contact/test-email')
     .get(
@@ -24,7 +30,7 @@ router.route('/api/contact/missed')
 
 router.route('/api/contact/submit-form')
     .post(
-        ContactController.validateContactForm(),
+        ContactController.getContactFormValidators(),
         ContactController.sendContactForm
     );
 
