@@ -1,13 +1,13 @@
 {
-    "hostUrl": "https://capture-bros-site-dhmqp.ondigitalocean.app/",
+    "hostUrl": "https://capturebros.com/",
     "head": {
         "title": "CaptureBros Team - Game Footage Capture, Game Trailers Editing Service",
         "description": "CaptureBros Team provides game footage capture and game trailers editing service. Whatever the game ‒ we can do it",
         "social": {
-            "ogUrl": "https://capture-bros-site-dhmqp.ondigitalocean.app/",
+            "ogUrl": "https://capturebros.com/",
             "ogTitle": "CaptureBros Team - Game Footage Capture Service",
             "ogDescription": "CaptureBros Team provides game footage capture and game trailers editing service. Whatever the game ‒ we can do it",
-            "ogImage": "https://capture-bros-site-dhmqp.ondigitalocean.app/public/img/social-card.png"
+            "ogImage": "https://capturebros.com/public/img/social-card.png"
         }
     },
     "general": {
