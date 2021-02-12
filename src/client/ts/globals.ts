@@ -21,7 +21,7 @@ declare module Config {
     }
 
     export interface BuildSettingPerEnv {
-        contactFormEndpoint: string;
+        backendUrl: string;
     }
 
     export interface BuildSettings {

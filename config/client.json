@@ -15,10 +15,10 @@
     },
     "buildSettings": {
         "development": {
-            "contactFormEndpoint": "http://localhost:3000"
+            "backendUrl": "http://localhost:3000"
         },
         "production": {
-            "contactFormEndpoint": "https://capture-bros-backend.herokuapp.com"
+            "backendUrl": "https://capture-bros-backend.herokuapp.com"
         }
     },
     "featuredVideos": {

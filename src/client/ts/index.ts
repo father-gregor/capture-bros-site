@@ -1,5 +1,10 @@
+const backendUrl = ENV === 'development'
+    ? config.buildSettings.development.backendUrl
+    : config.buildSettings.production.backendUrl;
+        
 window.onload = () => {
     document.body.classList.remove('preload');
+    pingServer();
 };
 
 const form: HTMLFormElement = document.getElementById('contact-form') as HTMLFormElement; 
@@ -19,11 +24,7 @@ form.addEventListener('submit', async (event) => {
 });
 
 async function sendContactData (contactData: FormData) {
-    const contactFormEndpoint = ENV === 'development'
-        ? config.buildSettings.development.contactFormEndpoint
-        : config.buildSettings.production.contactFormEndpoint;
-
-    const response = await fetch(`${contactFormEndpoint}/api/contact/submit-form`, {
+    const response = await fetch(`${backendUrl}/api/contact/submit-form`, {
         method: 'post',
         body: contactData
     });
@@ -34,6 +35,10 @@ async function sendContactData (contactData: FormData) {
     else {
         showContactFormSuccess();
     }
+}
+
+function pingServer () {
+    fetch(`${backendUrl}/api/system/ping`, {method: 'get'});
 }
 
 function enableSubmitButton () {
