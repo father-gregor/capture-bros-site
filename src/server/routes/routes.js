@@ -11,7 +11,7 @@ router.route('/')
         return res.status(200).send();
     });
 
-router.route('/api/systen/ping')
+router.route('/api/system/ping')
     .get(
         SystemController.pingServer
     );
