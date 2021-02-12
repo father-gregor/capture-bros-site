@@ -6,7 +6,8 @@
     "buildClient": "cross-env NODE_ENV=production webpack --mode production",
     "watchClient": "cross-env NODE_ENV=development webpack --mode development --watch",
     "startServer": "node ./src/server/server.js",
-    "watchServer": "nodemon ./src/server/server.js"
+    "watchServer": "nodemon ./src/server/server.js",
+    "postinstall": "node ./scripts/postinstall.script.js"
   },
   "author": "Denys Rakov <bobsixpackbob@gmail.com> (https://github.com/father-gregor)",
   "license": "MIT",
