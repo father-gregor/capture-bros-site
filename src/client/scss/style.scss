@@ -2,6 +2,7 @@
 @import "./fonts.scss";
 @import "./burger-icon.scss";
 @import "./icons.scss";
+@import "./variables.scss";
 
 body {
     &.preload {
@@ -99,7 +100,7 @@ header {
 .featured-video {
     @media (max-width: 639px) {
         iframe {
-            width: 300px;
+            width: 325px;
             height: 181px;
         }
     }
@@ -116,4 +117,10 @@ header {
 #submit-contact-form:disabled {
     opacity: 0.5;
     background-color: grey;
+}
+
+.why-us-card {
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 }
