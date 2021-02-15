@@ -13,7 +13,9 @@
 <title><%= config.head.title %></title>
 <meta name="title" content="<%= config.head.title %>">
 <meta name="description" content="<%= config.head.description %>" />
-
+<% if (ENV === 'production') { %>
+<meta name="google-site-verification" content="pY3llSJBwVVQ0WC1raGT897ShPCDaIfiohoqCFVRzi8" />
+<% }; %>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<%= config.head.social.ogUrl %>">
 <meta property="og:title" content="<%= config.head.social.ogTitle %>">
