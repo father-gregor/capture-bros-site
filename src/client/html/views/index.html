@@ -6,11 +6,11 @@
 </head>
 
 <%
-function dynamicArgs (args, obj) {
-      const newArgs = Array.prototype.slice.call(args);
-      newArgs[0] = Object.assign(obj, newArgs[0]);
-      return newArgs;
-};
+    function dynamicArgs (args, obj) {
+        const newArgs = Array.prototype.slice.call(args);
+        newArgs[0] = Object.assign(obj, newArgs[0]);
+        return newArgs;
+    };
 %>
 
     <body class="bg-background preload">
@@ -27,14 +27,14 @@ function dynamicArgs (args, obj) {
             </div>
         </div>
 
-        <div id="who-we-are"
-             class="mx-auto py-20 bg-white hidden">
+        <div id="why-us"
+             class="mx-auto pt-10 pb-20 bg-white">
             <div class="flex flex-col">
-                <div class="mb-8 uppercase font-heading text-4xl text-center">
-                    Who we are
+                <div class="mb-4 uppercase font-heading text-4xl text-center">
+                    Why us
                 </div>
                 
-                @require('../parts/who-we-are.html')
+                @require('../parts/why-us.html')
             </div>
         </div>
 
@@ -79,7 +79,7 @@ function dynamicArgs (args, obj) {
 
         <div id="teams" class="mx-auto py-20 bg-white">
             <div class="flex flex-col">
-                <div class="mb-10 font-heading text-4xl uppercase text-center">
+                <div class="mb-10 mx-2 font-heading text-4xl uppercase text-center">
                     Part of something bigger
                 </div>
 

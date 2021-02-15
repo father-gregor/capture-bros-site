@@ -1,0 +1,57 @@
+<%
+    const cards = [
+        {
+            title: "Knowledge",
+            icon: "camera",
+            texts: [
+                "Deep understanding of best game strategies and capturing the moment-to-moment excitement.",
+                "Great experience with capturing tools in a different game engines."
+            ]
+        },
+        {
+            title: "Experience",
+            icon: "games",
+            texts: [
+                "Working with talented game studios all around the world.",
+                "Excelence with modern video editing and game capture technologies: Adobe Premiere, Final Cut Pro, VEGAS Pro, OBS Studios, XSplit etc.",
+                "Passion and love for gaming, in all of its genres and variety."
+            ]
+        },
+        {
+            title: "Creativity",
+            icon: "edit-markup",
+            texts: [
+                "Team of creative professionals that always find a best way to capture your game.",
+                "Great understanding of concepts of composition, cinematography, color and lighting in visual media."
+            ]
+        }
+    ];
+%>
+
+<div class="container mx-auto flex flex-col">
+    <div class="mb-10 mx-4 font-text text-2xl text-center text-gray-400">
+        Team of passionate veterans in game industry with a vast experience
+    </div>
+    <div class="mx-auto px-4 xl:px-10 flex flex-col md:flex-row md:flex-wrap justify-center gap-8 xl:gap-16">
+        <% cards.forEach((card) => { %>
+            <div class="flex flex-col flex-shrink lg:flex-1 md:w-45% lg:w-2/4 xl:w-auto p-8 why-us-card">
+                <div class="mt-8 mb-12 text-center">
+                    <i class="gg-<%= card.icon %> text-capture-blue"></i>
+                </div>
+                <div class="mb-2 font-heading text-2xl text-center uppercase">
+                    <%= card.title %>
+                </div>
+                <ul class="flex-grow font-text text-lg">
+                    <% card.texts.forEach((text) => { %>
+                        <li class="my-2 flex flex-row">
+                            <div class="mr-2">
+                                <i class="gg-awards align-middle text-capture-red"></i>
+                            </div>
+                            <div><%= text %></div>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% }); %>
+    </div>
+</div>
