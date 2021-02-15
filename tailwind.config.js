@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const clientConfig = require('./config/client.json');
 
 module.exports = {
     purge: [
@@ -21,6 +22,11 @@ module.exports = {
                     'red-light': '#fc1016',
                     blue: '#081527'
                 }
+            },
+            width: {
+                '45%':'45%', 
+                'client-image-desk': clientConfig.featuredClients.imgWidth,
+                'client-image-mobile': Math.round(clientConfig.featuredClients.imgWidth * 0.75)
             }
         },
         backgroundColor: (theme) => ({
