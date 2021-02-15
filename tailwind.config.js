@@ -2,11 +2,15 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const clientConfig = require('./config/client.json');
 
 module.exports = {
-    purge: [
-        './src/client/html/**/*.html',
-        './src/client/ts/*.ts',
-        './src/client/scss/**/*.scss'
-    ],
+    purge: {
+        mode: 'all',
+        preserveHtmlElements: false,
+        content: [
+            './src/client/html/**/*.html',
+            './src/client/ts/*.ts',
+            './src/client/scss/**/*.scss'
+        ]
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
