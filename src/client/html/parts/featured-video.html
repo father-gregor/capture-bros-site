@@ -22,7 +22,7 @@
                 <% video.channels.forEach((channel) => { %>
                     <div class="flex items-center mr-2">
                         <a href="<%= channel.url %>" target="_blank" rel="noopener" title="<%= channel.name %>">
-                            <img title="<%= channel.name %>" class="rounded-full mr-1" alt="<%= channel.name %> Youtube Channel Logo" src="/public/img/<%= channel.logo %>" width="36" height="36" />
+                            <img loading="lazy" title="<%= channel.name %>" class="rounded-full mr-1" alt="<%= channel.name %> Youtube Channel Logo" src="/public/img/<%= channel.logo %>" width="36" height="36" />
                         </a>
                     </div>
                 <% }); %>
