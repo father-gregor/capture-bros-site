@@ -8,6 +8,10 @@
 @import "../../../node_modules/css.gg/icons/scss/spinner.scss";
 @import "../../../node_modules/css.gg/icons/scss/check-o.scss";
 @import "../../../node_modules/css.gg/icons/scss/close-o.scss";
+@import "../../../node_modules/css.gg/icons/scss/games.scss";
+@import "../../../node_modules/css.gg/icons/scss/camera.scss";
+@import "../../../node_modules/css.gg/icons/scss/edit-markup.scss";
+@import "../../../node_modules/css.gg/icons/scss/awards.scss";
 
 .gg-copyright,
 .gg-mail,
@@ -17,6 +21,10 @@
 .gg-close,
 .gg-check-o,
 .gg-close-o,
+.gg-games,
+.gg-camera,
+.gg-edit-markup,
+.gg-awards,
 .gg-eye {
     display: inline-block;
 }
@@ -27,4 +35,15 @@
 
 .gg-copyright {
     --ggs: 1;
+}
+
+#why-us {
+    .gg-games,
+    .gg-camera {
+        --ggs: 5;
+    }
+
+    .gg-edit-markup {
+        --ggs: 4.5;
+    }
 }
