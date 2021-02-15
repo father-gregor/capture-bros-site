@@ -3,7 +3,6 @@ const clientConfig = require('./config/client.json');
 
 module.exports = {
     purge: {
-        mode: 'all',
         preserveHtmlElements: false,
         content: [
             './src/client/html/**/*.html',
@@ -11,7 +10,7 @@ module.exports = {
             './src/client/scss/**/*.scss'
         ]
     },
-    darkMode: false, // or 'media' or 'class'
+    darkMode: false,
     theme: {
         extend: {
             fontFamily: {
