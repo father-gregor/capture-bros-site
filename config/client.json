@@ -204,9 +204,24 @@
                 "imgUrl": "modus.png"
             },
             {
+                "name": "Dreams Uncorporated",
+                "url": "https://uncorporated.co/",
+                "imgUrl": "dreams-uncorporated-logo.png"
+            },
+            {
                 "name": "Modus Studios Brazil",
                 "url": "https://modusgames.com/about/",
                 "imgUrl": "modus-brazil.jpg"
+            },
+            {
+                "name": "Pixile Studios",
+                "url": "https://pixilestudios.com/",
+                "imgUrl": "pixile-logo.png"
+            },
+            {
+                "name": "Jutsu Games",
+                "url": "http://jutsugames.com/",
+                "imgUrl": "jutsu-games-logo.png"
             },
             {
                 "name": "Stormind Games",
