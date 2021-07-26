@@ -2,6 +2,7 @@ const _ = require('lodash');
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -151,6 +152,9 @@ module.exports = (env, options) => {
                     {from: './src/client/favicon', to: './public/favicon'},
                     {from: './src/client/img', to: './public/img'}
                 ]
+            }),
+            new ExtraWatchWebpackPlugin({
+                files: ['./config/client.json'],
             }),
             new CleanWebpackPlugin({})
         ],

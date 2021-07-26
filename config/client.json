@@ -25,10 +25,97 @@
         "width": 500,
         "videos": [
             {
+                "url": "https://www.youtube.com/embed/0EMyJrY--TA",
+                "title": "Cris Tales – Launch Trailer",
+                "type": "footage",
+                "views": "125 000",
+                "channels": [
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=0EMyJrY--TA",
+                        "logo": "playstation-logo.jpg"
+                    },
+                    {
+                        "name": "Nintendo",
+                        "url": "https://www.youtube.com/watch?v=8hyzuto5JnQ",
+                        "logo": "nintendo-logo.jpg"
+                    },
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=TuSXcSQHvW0",
+                        "logo": "xbox-logo.jpg"
+                    },
+                    {
+                        "name": "Stadia",
+                        "url": "https://www.youtube.com/watch?v=Ht-L5qpAn9I",
+                        "logo": "stadia-logo.jpg"
+                    }
+                ]
+            },
+            {
+                "url": "https://www.youtube.com/embed/O64XSmdcmdk",
+                "title": "Super Animal Royale - Announce Trailer",
+                "type": "footage",
+                "views": "710 000",
+                "channels": [
+                    {
+                        "name": "Nintendo",
+                        "url": "https://www.youtube.com/watch?v=O64XSmdcmdk",
+                        "logo": "nintendo-logo.jpg"
+                    },
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=C-OKgr_YuKA",
+                        "logo": "playstation-logo.jpg"
+                    },
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=bjemaJqby54",
+                        "logo": "xbox-logo.jpg"
+                    }
+                ]
+            },
+            {
+                "url": "https://www.youtube.com/embed/huz3LcLrK6k",
+                "title": "Super Animal Royale - Game Preview Launch Trailer",
+                "type": "footage",
+                "views": "80 000",
+                "channels": [
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=huz3LcLrK6k",
+                        "logo": "xbox-logo.jpg"
+                    }
+                ]
+            },
+            {
+                "url": "https://www.youtube.com/embed/ytkuEJkVR3U",
+                "title": "Rustler - Release Date Announce Trailer",
+                "type": "footage",
+                "views": "170 000",
+                "channels": [
+                    {
+                        "name": "PlayStation",
+                        "url": "https://www.youtube.com/watch?v=PV4NCn999gA",
+                        "logo": "playstation-logo.jpg"
+                    },
+                    {
+                        "name": "Xbox",
+                        "url": "https://www.youtube.com/watch?v=6T3Jj814Hxs",
+                        "logo": "xbox-logo.jpg"
+                    },
+                    {
+                        "name": "Nintendo",
+                        "url": "https://www.youtube.com/watch?v=ytkuEJkVR3U",
+                        "logo": "nintendo-logo.jpg"
+                    }
+                ]
+            },
+            {
                 "url": "https://www.youtube.com/embed/JSaiKqBkcNk",
                 "title": "Override 2: Super Mech League - Launch Trailer",
                 "type": "footage",
-                "views": "150 000",
+                "views": "170 000",
                 "channels": [
                     {
                         "name": "PlayStation",
@@ -51,7 +138,7 @@
                 "url": "https://www.youtube.com/embed/cIWzzAzmUxU",
                 "title": "Override 2: Super Mech League - Ultraman Gameplay Trailer",
                 "type": "footage",
-                "views": "325 000",
+                "views": "385 000",
                 "channels": [
                     {
                         "name": "PlayStation",
