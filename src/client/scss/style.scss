@@ -24,6 +24,10 @@ header,
     }
 }
 
+.portfolio-link a {
+    transition: color 0.2s ease-in;
+}
+
 header {
     @media (min-width: 1536px) {
         background-position: center 45%;
