@@ -1,0 +1,7 @@
+<div class="flex flex-col md:flex-row w-full">
+    <% screenshots.forEach((screen) => { %>
+        <div class="max-w-full md:max-w-1/2">
+            <img src="<%= screen.url %>" alt="<%= screen.alt %>" class="object-contain"/>
+        </div>
+    <% }); %>
+</div>

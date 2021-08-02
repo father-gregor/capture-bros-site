@@ -14,7 +14,7 @@
 %>
 
     <body class="bg-background preload">
-        @require('../parts/header.html')
+        <%= require('../parts/header.html').apply(null, dynamicArgs(arguments, {title: "Game Footage.", subtitle: "It\'s our passion"})) %>
 
         <div id="what-we-do"
              class="mx-auto py-20 bg-white">
@@ -25,6 +25,11 @@
                 
                 @require('../parts/what-we-do.html')
             </div>
+        </div>
+
+        <div id="project-screens-section-a"
+             class="pb-10 bg-white">
+            <%= require('../parts/home-page-screenshots.html').apply(null, dynamicArgs(arguments, {screenshots: config.screenshots.sectionA})) %>
         </div>
 
         <div id="why-us"
@@ -52,6 +57,11 @@
                         <% }); %>
                     </div>
                 </div>
+                <!--
+                <div class="mt-14 text-center font-text text-3xl text-white uppercase">
+                    <a href="/portfolio">Works Collection</a>
+                </div>
+                -->
                 <div class="my-14 text-center font-text text-white text-xl">
                     Want our help? Let's <a class="text-capture-red-light hover:text-opacity-80 font-semibold"
                        href="mailto:<%= config.general.contactEmail %>">talk</a>
@@ -68,7 +78,7 @@
                     Our Clients
                 </div>
                 <div class="container mx-auto xl:px-40">
-                    <div class="flex flex-row flex-wrap justify-center xl:mx-20">
+                    <div class="flex flex-row flex-wrap justify-center">
                         <% config.featuredClients.clients.forEach((client) => { %>
                             <%= require('../parts/featured-client.html').apply(null, dynamicArgs(arguments, {client, config})) %>
                         <% }); %>
