@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @require('../parts/head.html')
+</head>
+
+<%
+    function dynamicArgs (args, obj) {
+        const newArgs = Array.prototype.slice.call(args);
+        newArgs[0] = Object.assign(obj, newArgs[0]);
+        return newArgs;
+    };
+
+    const headerItems = [
+        {
+            text: "Contact us",
+            url: "#contact"
+        }
+    ];
+
+    const headerOptions = {
+        headerItems: headerItems,
+        bgImg: "background: url('/public/img/portfolio/header-background.jpg') center 55% / cover no-repeat;",
+        title: "Portfolio",
+        subtitle: ""
+    };
+%>
+
+    <body class="bg-background preload">
+        <%= require('../parts/header.html').apply(null, dynamicArgs(arguments, headerOptions)) %>
+
+        <div id="what-we-do"
+             class="mx-auto py-20 bg-white">
+            <div class="flex flex-col">
+                @require('../parts/portfolio-video-card.html')
+            </div>
+        </div>
+
+        <div class="mx-auto w-3/4 md:w-2/5 border-t-4 border-capture-blue"></div>
+
+        <div id="contact"
+             class="mx-auto py-20 bg-white">
+            <div class="flex flex-col">
+                <div class="mb-10 font-heading text-4xl uppercase text-center">
+                    Leave us a message
+                </div>
+                <div class="flex justify-center">
+                    @require('../parts/contact.html')
+                </div>
+            </div>
+        </div>
+
+        @require('../parts/footer.html')
+    </body>
+</html>
