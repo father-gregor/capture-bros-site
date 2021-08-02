@@ -130,17 +130,20 @@ module.exports = (env, options) => {
                 ENV: JSON.stringify(options.mode),
                 ...flattenConfig(clientConfig)
             }),
-            new HtmlWebpackPlugin({
-                template: '!!underscore-template-loader!./src/client/html/views/index.html',
-                templateParameters: {
-                    config: clientConfig
-                },
-                cache: false,
-                inject: 'body',
-                scriptLoading: 'defer',
-                minify: process.env.NODE_ENV === 'development' ? false : {
-                    collapseWhitespace: false
-                }
+            ...['index.html', 'portfolio.html'].map((page) => {
+                return new HtmlWebpackPlugin({
+                    filename: page,
+                    template: `!!underscore-template-loader!./src/client/html/views/${page}`,
+                    templateParameters: {
+                        config: clientConfig
+                    },
+                    cache: false,
+                    inject: 'body',
+                    scriptLoading: 'defer',
+                    minify: process.env.NODE_ENV === 'development' ? false : {
+                        collapseWhitespace: false
+                    }
+                });
             }),
             new MiniCssExtractPlugin({
                 filename: '[name].[contenthash].css',
