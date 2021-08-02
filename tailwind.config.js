@@ -30,6 +30,9 @@ module.exports = {
                 '45%':'45%', 
                 'client-image-desk': clientConfig.featuredClients.imgWidth,
                 'client-image-mobile': Math.round(clientConfig.featuredClients.imgWidth * 0.75)
+            },
+            maxWidth: {
+                '1/2': '50%',
             }
         },
         backgroundColor: (theme) => ({
