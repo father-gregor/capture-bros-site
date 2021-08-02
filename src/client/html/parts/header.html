@@ -1,37 +1,7 @@
-<%
-    const headerItems = [
-        {
-            text: "What we do",
-            url: "#what-we-do"
-        },
-        {
-            text: "Why us",
-            url: "#why-us"
-        },
-        {
-            text: "Works",
-            url: "#projects"
-        },
-        {
-            text: "Clients",
-            url: "#clients"
-        },
-        {
-            text: "Teams",
-            url: "#teams"
-        },
-        {
-            text: "Contact us",
-            url: "#contact"
-        }
-    ];
-%>
-
-
-<header class="mx-auto px-0 md:px-10 lg:px-24 xl:px-36 pt-10" style="background: url('/public/img/header-background.jpg') center 55% / cover no-repeat;">
+<header class="mx-auto px-0 md:px-10 lg:px-24 xl:px-36 pt-10" style="<%= bgImg %>">
     <div class="flex flex-row">
         <div class="flex flex-col flex-grow-0 ml-5 sm:ml-10">
-            <a href="#" class="header-logo">
+            <a href="/" class="header-logo">
                 <img src="/public/img/logo-tight.png" alt="CaptureBros Team Logo" width="250" height="158"/>
             </a>
             <a href="http://overdreamers.com/" target="_blank" rel="noopener" class="division-block flex flex-col items-center w-3/4 mt-2 -ml-3 hover:text-capture-red font-logo uppercase">
@@ -55,8 +25,10 @@
     <div class="pb-20">
         <div class="flex flex-col justify-center uppercase font-heading text-6xl text-center"
              style="height: 525px;">
-            <div class="-mt-10">Game Footage.</div>
-            <div>It's our passion</div>
+            <div class="-mt-10"><%= title %></div>
+            <% if (subtitle) { %>
+            <div><%= subtitle %></div>
+            <% }; %>
         </div>
     </div>
 </header>
