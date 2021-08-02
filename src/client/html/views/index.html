@@ -11,10 +11,44 @@
         newArgs[0] = Object.assign(obj, newArgs[0]);
         return newArgs;
     };
+
+    const headerItems = [
+        {
+            text: "What we do",
+            url: "#what-we-do"
+        },
+        {
+            text: "Why us",
+            url: "#why-us"
+        },
+        {
+            text: "Works",
+            url: "#projects"
+        },
+        {
+            text: "Clients",
+            url: "#clients"
+        },
+        {
+            text: "Teams",
+            url: "#teams"
+        },
+        {
+            text: "Contact us",
+            url: "#contact"
+        }
+    ];
+
+    const headerOptions = {
+        headerItems: headerItems,
+        bgImg: "background: url('/public/img/header-background.jpg') center 55% / auto no-repeat;",
+        title: "Game Footage.",
+        subtitle: "It\'s our passion"
+    };
 %>
 
     <body class="bg-background preload">
-        <%= require('../parts/header.html').apply(null, dynamicArgs(arguments, {title: "Game Footage.", subtitle: "It\'s our passion"})) %>
+        <%= require('../parts/header.html').apply(null, dynamicArgs(arguments, headerOptions)) %>
 
         <div id="what-we-do"
              class="mx-auto py-20 bg-white">
@@ -58,10 +92,10 @@
                     </div>
                 </div>
                 <!--
-                <div class="mt-14 text-center font-text text-3xl text-white uppercase">
-                    <a href="/portfolio">Works Collection</a>
-                </div>
-                -->
+                <div class="portfolio-link mt-20 uppercase font-heading text-4xl text-center text-white">
+                    <a href="/portfolio.html" class="hover:text-capture-red">More of Our Works</a>
+                </div>-->
+
                 <div class="my-14 text-center font-text text-white text-xl">
                     Want our help? Let's <a class="text-capture-red-light hover:text-opacity-80 font-semibold"
                        href="mailto:<%= config.general.contactEmail %>">talk</a>
