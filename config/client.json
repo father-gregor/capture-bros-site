@@ -21,6 +21,18 @@
             "backendUrl": "https://capture-bros-backend.herokuapp.com"
         }
     },
+    "screenshots": {
+        "sectionA": [
+            {
+                "url": "/public/img/screenshots/sar1.png",
+                "alt": "Super Animal Royale - Screenshot"
+            },
+            {
+                "url": "/public/img/screenshots/cristales1.png",
+                "alt": "Cristales - Screenshot"
+            }
+        ]
+    },
     "featuredVideos": {
         "width": 500,
         "videos": [
@@ -191,7 +203,7 @@
         ]
     },
     "featuredClients": {
-        "imgWidth": 350,
+        "imgWidth": 400,
         "clients": [
             {
                 "name": "Maximum Games",
@@ -202,31 +214,6 @@
                 "name": "Modus Games",
                 "url": "https://modusgames.com/",
                 "imgUrl": "modus.png"
-            },
-            {
-                "name": "Dreams Uncorporated",
-                "url": "https://uncorporated.co/",
-                "imgUrl": "dreams-uncorporated-logo.png"
-            },
-            {
-                "name": "Modus Studios Brazil",
-                "url": "https://modusgames.com/about/",
-                "imgUrl": "modus-brazil.jpg"
-            },
-            {
-                "name": "Pixile Studios",
-                "url": "https://pixilestudios.com/",
-                "imgUrl": "pixile-logo.png"
-            },
-            {
-                "name": "Jutsu Games",
-                "url": "http://jutsugames.com/",
-                "imgUrl": "jutsu-games-logo.png"
-            },
-            {
-                "name": "Stormind Games",
-                "url": "https://stormindgames.com/",
-                "imgUrl": "stormind-games.png"
             }
         ]
     }
